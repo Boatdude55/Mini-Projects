@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+          <meta charset="utf-8">
+          <title>Buttons</title>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script type="text/javascript" src="./scale.js"></script>
+          <style type="text/css">
+              canvas{
+                  border: solid 1px;
+              }
+          </style>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script type="text/javascript">
+
+            var canvas = document.getElementById("canvas");
+            
+            var drawer = new CanvasAPI.canvas(canvas);
+            drawer.drawShape({
+                shape: 'rect',
+                x: 10,
+                y: 20,
+                dx: 20,
+                dy: 20
+            });
+            /*
+            var tween = {
+                startTime: 0,
+                startX: 0,
+                endX: 0,
+                duration: 3,
+            };
+            */
+            var animation = {
+                duration: 3,
+                repeat: false,
+                props: {
+                    dx: {
+                        to: 0
+                    }
+                }
+            };
+
+            drawer.animate( animation );
+    
+        </script>
+    </body>
+</html>
